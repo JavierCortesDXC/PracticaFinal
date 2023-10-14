@@ -1,0 +1,22 @@
+<!-- product-list.component.html -->
+<h1>f</h1>
+<div class="product-list">
+    <h2>Tienda de Tenis</h2>
+    <div class="filters">
+      <button (click)="filterByBrand('Nike')">Nike</button>
+      <button (click)="filterByBrand('Adidas')">Adidas</button>
+      <button (click)="filterByBrand('Puma')">Puma</button>
+    </div>
+  
+    <!-- Lista de productos -->
+    <div class="product-container" *ngFor="let product of products">
+      <div class="product">
+        <img [src]="product.imageUrl" alt="{{ product.name }}" />
+        <h3>{{ product.name }}</h3>
+        <p>Marca: {{ product.brand }}</p>
+        <p>Precio: ${{ product.price }}</p>
+        <button (click)="addToCart(product)">Agregar al carrito</button>
+      </div>
+    </div>
+  </div>
+  
